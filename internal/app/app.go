@@ -100,6 +100,7 @@ func Init(ctx context.Context, opts ...Option) (func(), error) {
 		opt(&o)
 	}
 
+	// 读取config文件，放入 config.C 结构中，可支持toml/yaml等多种格式
 	config.MustLoad(o.ConfigFile)
 	if v := o.ModelFile; v != "" {
 		config.C.Casbin.Model = v
@@ -110,19 +111,25 @@ func Init(ctx context.Context, opts ...Option) (func(), error) {
 	if v := o.MenuFile; v != "" {
 		config.C.Menu.Data = v
 	}
+	
+	// 初始化打印config.toml/yaml内容
 	config.PrintWithJSON()
-
+	
+	// 初始化打印模式/进程号/TraceID等 
 	logger.Printf(ctx, "服务启动，运行模式：%s，版本号：%s，进程号：%d", config.C.RunMode, o.Version, os.Getpid())
 
-	// 初始化日志模块
+	// 初始化Log模块(输出方式，级别等)
 	loggerCleanFunc, err := initialize.InitLogger()
 	if err != nil {
 		return nil, err
 	}
 
-	// 初始化服务运行监控
+	// 初始化服务运行监控服务 gops，配置来自 config.C.Monitor
 	initialize.InitMonitor(ctx)
-	// 初始化图形验证码
+
+	// 初始化图形验证码服务, 配置来自 config.C.Captcha
+	// 验证码服务来自Redis, 配置来自 config.C.Redis
+	// 【内网应用环境，去除验证码功能】
 	initialize.InitCaptcha()
 
 	// 初始化依赖注入器
@@ -137,12 +144,15 @@ func Init(ctx context.Context, opts ...Option) (func(), error) {
 		return nil, err
 	}
 
-	// 初始化HTTP服务
+	// 初始化HTTP服务，配置来自 config.C.HTTP
 	httpServerCleanFunc := initialize.InitHTTPServer(ctx, injector.Engine)
 
 	return func() {
+		// 关闭httpServer
 		httpServerCleanFunc()
+		// 关闭注入器
 		injectorCleanFunc()
+		// 关闭log模块
 		loggerCleanFunc()
 	}, nil
 }
