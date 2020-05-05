@@ -39,17 +39,14 @@ go get -u github.com/swaggo/swag/cmd/swag
 
 - [Gin](https://gin-gonic.com/) -- The fastest full-featured web framework for Go.
 - [GORM](http://gorm.io/) -- The fantastic ORM library for Golang
-- [Mongo](https://github.com/mongodb/mongo-go-driver) -- The Go driver for MongoDB
 - [Casbin](https://casbin.org/) -- An authorization library that supports access control models like ACL, RBAC, ABAC in Golang
 - [Wire](https://github.com/google/wire) -- Compile-time Dependency Injection for Go
 
 ## 快速开始
 
-> 也可以使用国内源：https://gitee.com/lyric/gin-admin
-
 ```
-go get -v github.com/LyricTian/gin-admin/cmd/gin-admin
-cd $GOPATH/src/github.com/LyricTian/gin-admin
+go get -v github.com/wangwei518/gin-admin/cmd/gin-admin
+cd $GOPATH/src/github.com/wangwei518/gin-admin
 # 使用AIR工具运行
 air
 # OR 基于Makefile运行
@@ -117,37 +114,19 @@ wire gen ./internal/app/initialize
 │   └── util # 工具库模块
 ├── scripts # 脚本目录
 ```
+## TODO
+- [ ] reconfig API
+- [ ] APIJSON Integration
+- [ ] LDAP Integration
 
-## 前端工程
+## Router
+```
+├── admin
+│   ├── gen_token # 
+│   ├── refresh_token # 
+│   └── remove_token # 
+├── login # 
+├── logout # 
+├── apijson # 
+```
 
-- 基于[Ant Design React](https://ant.design/index-cn)版本的实现：[gin-admin-react](https://github.com/LyricTian/gin-admin-react)(也可使用国内源：[https://gitee.com/lyric/gin-admin-react](https://gitee.com/lyric/gin-admin-react))
-
-## 互动交流
-
-### 与作者对话
-
-> 该项目是利用业余时间进行开发的，开发思路主要是源于自己的项目积累及个人思考，如果您有更好的想法和建议请与我进行沟通，一起探讨，畅聊技术人生，相互学习，一起进步。我非常期待！下面是我的微信二维码（如果此项目对您提供了帮助也可以请作者喝杯咖啡 (*￣︶￣)，聊表心意，一起星巴克「续杯」~嘿嘿 ）：
-
-<div>
-<img src="http://store.tiannianshou.com/screenshots/gin-admin/wechat.jpeg" width="256"alt="wechat" />
-<img src="http://store.tiannianshou.com/screenshots/gin-admin/we-pay.png" width="256" alt="we-pay" />
-</div>
-
-### QQ 群：1409099
-
-<img src="http://store.tiannianshou.com/screenshots/gin-admin/qqgroup.jpeg" width="256" alt="qqgroup" />
-
-## 提供一对一服务
-
-> 另外，作者有6年以上的工作经验，对前后端技术都有些研究。我也非常乐意通过有偿的方式为大家提供一对一专项辅导，包括：gin-admin/golang/react/vue，帮助大家快速掌握和入门！
-
-## MIT License
-
-    Copyright (c) 2020 Lyric
-
-[reportcard-url]: https://goreportcard.com/report/github.com/LyricTian/gin-admin
-[reportcard-image]: https://goreportcard.com/badge/github.com/LyricTian/gin-admin
-[godoc-url]: https://godoc.org/github.com/LyricTian/gin-admin
-[godoc-image]: https://godoc.org/github.com/LyricTian/gin-admin?status.svg
-[license-url]: http://opensource.org/licenses/MIT
-[license-image]: https://img.shields.io/npm/l/express.svg

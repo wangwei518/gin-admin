@@ -86,4 +86,20 @@ func (a *Router) RegisterAPI(app *gin.Engine) {
 			gUser.PATCH(":id/disable", a.UserAPI.Disable)
 		}
 	}
+	v2 := g.Group("/v2")
+	{
+		v2.POST("login", a.LoginAPI.Login)
+		v2.POST("logout", a.LoginAPI.Logout)
+		v2.POST("refresh-token", a.LoginAPI.Logout)
+		v2.POST("destroy-token", a.LoginAPI.Logout)
+		v2.GET("apijson", a.LoginAPI.Logout)
+		v2.POST("apijson", a.LoginAPI.Logout)
+		v2.PUT("apijson", a.LoginAPI.Logout)
+		v2.PATCH("apijson", a.LoginAPI.Logout)
+		v2.DELETE("apijson", a.LoginAPI.Logout)
+		admin := v2.Group("/admin")
+		{
+			admin.POST("tbd", a.LoginAPI.Logout)
+		}
+	}
 }

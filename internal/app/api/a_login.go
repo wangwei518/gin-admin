@@ -57,16 +57,21 @@ func (a *Login) ResCaptcha(c *gin.Context) {
 // Login 用户登录
 func (a *Login) Login(c *gin.Context) {
 	ctx := c.Request.Context()
+
+	// 数据schema来自 /schema/s_login.go
 	var item schema.LoginParam
+
+	// 如果绑定失败，返回error
 	if err := ginplus.ParseJSON(c, &item); err != nil {
 		ginplus.ResError(c, err)
 		return
 	}
 
-	if !captcha.VerifyString(item.CaptchaID, item.CaptchaCode) {
-		ginplus.ResError(c, errors.New400Response("无效的验证码"))
-		return
-	}
+	// 不做验证码校验
+	//if !captcha.VerifyString(item.CaptchaID, item.CaptchaCode) {
+	//	ginplus.ResError(c, errors.New400Response("无效的验证码"))
+	//	return
+	//}
 
 	user, err := a.LoginBll.Verify(ctx, item.UserName, item.Password)
 	if err != nil {

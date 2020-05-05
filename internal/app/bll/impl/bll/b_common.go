@@ -2,12 +2,10 @@ package bll
 
 import (
 	"context"
-
 	"github.com/LyricTian/gin-admin/internal/app/config"
 	icontext "github.com/LyricTian/gin-admin/internal/app/context"
 	"github.com/LyricTian/gin-admin/internal/app/model"
 	"github.com/LyricTian/gin-admin/internal/app/schema"
-	"github.com/LyricTian/gin-admin/pkg/util"
 )
 
 // GetRootUser 获取root用户
@@ -17,7 +15,8 @@ func GetRootUser() *schema.User {
 		RecordID: user.UserName,
 		UserName: user.UserName,
 		RealName: user.RealName,
-		Password: util.MD5HashString(user.Password),
+		//Password: util.MD5HashString(user.Password),
+		Password: user.Password,
 	}
 }
 
