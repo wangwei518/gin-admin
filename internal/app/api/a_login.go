@@ -80,13 +80,16 @@ func (a *Login) Login(c *gin.Context) {
 		ginplus.ResError(c, err)
 		return
 	}
-
+        // if verify pass
 	// get RecordID
 	userID := user.RecordID
 	// 将用户ID放入上下文
 	ginplus.SetUserID(c, userID)
-
+        
+        // new logger
 	ctx = logger.NewUserIDContext(ctx, userID)
+
+        //
 	tokenInfo, err := a.LoginBll.GenerateToken(ctx, userID)
 	if err != nil {
 		ginplus.ResError(c, err)
