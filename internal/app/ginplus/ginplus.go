@@ -5,10 +5,10 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/LyricTian/gin-admin/internal/app/schema"
-	"github.com/LyricTian/gin-admin/pkg/errors"
-	"github.com/LyricTian/gin-admin/pkg/logger"
-	"github.com/LyricTian/gin-admin/pkg/util"
+	"github.com/wangwei518/gin-admin/internal/app/schema"
+	"github.com/wangwei518/gin-admin/pkg/errors"
+	"github.com/wangwei518/gin-admin/pkg/logger"
+	"github.com/wangwei518/gin-admin/pkg/util"
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
 )
@@ -22,11 +22,12 @@ const (
 	ResBodyKey = prefix + "/res-body"
 )
 
-// GetToken 获取用户令牌
+// GetToken
 func GetToken(c *gin.Context) string {
 	var token string
 	auth := c.GetHeader("Authorization")
 	prefix := "Bearer "
+	// if Authorization field is not empty and begins with Bearer, assign substring to var token
 	if auth != "" && strings.HasPrefix(auth, prefix) {
 		token = auth[len(prefix):]
 	}
