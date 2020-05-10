@@ -1,13 +1,13 @@
 package api
 
 import (
-	"github.com/LyricTian/captcha"
-	"github.com/LyricTian/gin-admin/internal/app/bll"
-	"github.com/LyricTian/gin-admin/internal/app/config"
-	"github.com/LyricTian/gin-admin/internal/app/ginplus"
-	"github.com/LyricTian/gin-admin/internal/app/schema"
-	"github.com/LyricTian/gin-admin/pkg/errors"
-	"github.com/LyricTian/gin-admin/pkg/logger"
+	"github.com/wangwei518/captcha"
+	"github.com/wangwei518/gin-admin/internal/app/bll"
+	"github.com/wangwei518/gin-admin/internal/app/config"
+	"github.com/wangwei518/gin-admin/internal/app/ginplus"
+	"github.com/wangwei518/gin-admin/internal/app/schema"
+	"github.com/wangwei518/gin-admin/pkg/errors"
+	"github.com/wangwei518/gin-admin/pkg/logger"
 	"github.com/gin-gonic/gin"
 	"github.com/google/wire"
 )
@@ -21,6 +21,7 @@ type Login struct {
 }
 
 // GetCaptcha 获取验证码信息
+/*
 func (a *Login) GetCaptcha(c *gin.Context) {
 	ctx := c.Request.Context()
 	item, err := a.LoginBll.GetCaptcha(ctx, config.C.Captcha.Length)
@@ -30,8 +31,9 @@ func (a *Login) GetCaptcha(c *gin.Context) {
 	}
 	ginplus.ResSuccess(c, item)
 }
-
+*/
 // ResCaptcha 响应图形验证码
+/*
 func (a *Login) ResCaptcha(c *gin.Context) {
 	ctx := c.Request.Context()
 	captchaID := c.Query("id")
@@ -53,7 +55,7 @@ func (a *Login) ResCaptcha(c *gin.Context) {
 		ginplus.ResError(c, err)
 	}
 }
-
+*/
 // Login 用户登录
 func (a *Login) Login(c *gin.Context) {
 	ctx := c.Request.Context()
@@ -79,6 +81,7 @@ func (a *Login) Login(c *gin.Context) {
 		return
 	}
 
+	// get RecordID
 	userID := user.RecordID
 	// 将用户ID放入上下文
 	ginplus.SetUserID(c, userID)
