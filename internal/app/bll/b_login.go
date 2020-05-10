@@ -10,9 +10,9 @@ import (
 // ILogin 登录业务逻辑接口
 type ILogin interface {
 	// 获取图形验证码信息
-	GetCaptcha(ctx context.Context, length int) (*schema.LoginCaptcha, error)
+	//GetCaptcha(ctx context.Context, length int) (*schema.LoginCaptcha, error)
 	// 生成并响应图形验证码
-	ResCaptcha(ctx context.Context, w http.ResponseWriter, captchaID string, width, height int) error
+	//ResCaptcha(ctx context.Context, w http.ResponseWriter, captchaID string, width, height int) error
 	// 登录验证
 	Verify(ctx context.Context, userName, password string) (*schema.User, error)
 	// 生成令牌
