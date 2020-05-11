@@ -1,4 +1,4 @@
-module github.com/LyricTian/gin-admin
+module github.com/wangwei518/gin-admin
 
 go 1.14
 

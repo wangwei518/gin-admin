@@ -2,10 +2,10 @@ package bll
 
 import (
 	"context"
-	"github.com/LyricTian/gin-admin/internal/app/config"
-	icontext "github.com/LyricTian/gin-admin/internal/app/context"
-	"github.com/LyricTian/gin-admin/internal/app/model"
-	"github.com/LyricTian/gin-admin/internal/app/schema"
+	"github.com/wangwei518/gin-admin/internal/app/config"
+	icontext "github.com/wangwei518/gin-admin/internal/app/context"
+	"github.com/wangwei518/gin-admin/internal/app/model"
+	"github.com/wangwei518/gin-admin/internal/app/schema"
 )
 
 // GetRootUser 获取root用户

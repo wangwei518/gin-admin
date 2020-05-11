@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/LyricTian/gin-admin/internal/app/config"
-	"github.com/LyricTian/gin-admin/pkg/util"
+	"github.com/wangwei518/gin-admin/internal/app/config"
+	"github.com/wangwei518/gin-admin/pkg/util"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 )

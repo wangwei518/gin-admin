@@ -4,9 +4,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/LyricTian/gin-admin/internal/app/config"
-	"github.com/LyricTian/gin-admin/internal/app/ginplus"
-	"github.com/LyricTian/gin-admin/pkg/errors"
+	"github.com/wangwei518/gin-admin/internal/app/config"
+	"github.com/wangwei518/gin-admin/internal/app/ginplus"
+	"github.com/wangwei518/gin-admin/pkg/errors"
 	"github.com/gin-gonic/gin"
 	"github.com/go-redis/redis"
 	"github.com/go-redis/redis_rate"

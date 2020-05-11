@@ -4,11 +4,11 @@ import (
 	"context"
 	"os"
 
-	"github.com/LyricTian/gin-admin/internal/app/bll"
-	"github.com/LyricTian/gin-admin/internal/app/config"
-	"github.com/LyricTian/gin-admin/internal/app/model"
-	"github.com/LyricTian/gin-admin/internal/app/schema"
-	"github.com/LyricTian/gin-admin/pkg/util"
+	"github.com/wangwei518/gin-admin/internal/app/bll"
+	"github.com/wangwei518/gin-admin/internal/app/config"
+	"github.com/wangwei518/gin-admin/internal/app/model"
+	"github.com/wangwei518/gin-admin/internal/app/schema"
+	"github.com/wangwei518/gin-admin/pkg/util"
 	"github.com/google/wire"
 )
 

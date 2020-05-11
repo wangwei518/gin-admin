@@ -3,7 +3,7 @@ package schema
 import (
 	"time"
 
-	"github.com/LyricTian/gin-admin/pkg/util"
+	"github.com/wangwei518/gin-admin/pkg/util"
 )
 
 // User 用户对象

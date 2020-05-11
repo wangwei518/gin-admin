@@ -8,12 +8,12 @@ import (
 	"sort"
 
 	"github.com/LyricTian/captcha"
-	"github.com/LyricTian/gin-admin/internal/app/bll"
-	"github.com/LyricTian/gin-admin/internal/app/model"
-	"github.com/LyricTian/gin-admin/internal/app/schema"
-	"github.com/LyricTian/gin-admin/pkg/auth"
-	"github.com/LyricTian/gin-admin/pkg/errors"
-	"github.com/LyricTian/gin-admin/pkg/util"
+	"github.com/wangwei518/gin-admin/internal/app/bll"
+	"github.com/wangwei518/gin-admin/internal/app/model"
+	"github.com/wangwei518/gin-admin/internal/app/schema"
+	"github.com/wangwei518/gin-admin/pkg/auth"
+	"github.com/wangwei518/gin-admin/pkg/errors"
+	"github.com/wangwei518/gin-admin/pkg/util"
 	"github.com/google/wire"
 )
 

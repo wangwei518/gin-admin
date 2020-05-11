@@ -1,9 +1,9 @@
 package router
 
 import (
-	"github.com/LyricTian/gin-admin/internal/app/api"
-	"github.com/LyricTian/gin-admin/internal/app/api/mock"
-	"github.com/LyricTian/gin-admin/pkg/auth"
+	"github.com/wangwei518/gin-admin/internal/app/api"
+	"github.com/wangwei518/gin-admin/internal/app/api/mock"
+	"github.com/wangwei518/gin-admin/pkg/auth"
 	"github.com/casbin/casbin/v2"
 	"github.com/gin-gonic/gin"
 	"github.com/google/wire"

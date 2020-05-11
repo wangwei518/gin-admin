@@ -3,7 +3,7 @@ package model
 import (
 	"context"
 
-	"github.com/LyricTian/gin-admin/internal/app/schema"
+	"github.com/wangwei518/gin-admin/internal/app/schema"
 )
 
 // IDemo demo存储接口

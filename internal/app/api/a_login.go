@@ -1,7 +1,7 @@
 package api
 
 import (
-	"github.com/wangwei518/captcha"
+	"github.com/LyricTian/captcha"
 	"github.com/wangwei518/gin-admin/internal/app/bll"
 	"github.com/wangwei518/gin-admin/internal/app/config"
 	"github.com/wangwei518/gin-admin/internal/app/ginplus"

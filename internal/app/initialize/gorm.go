@@ -5,8 +5,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/LyricTian/gin-admin/internal/app/config"
-	igorm "github.com/LyricTian/gin-admin/internal/app/model/impl/gorm"
+	"github.com/wangwei518/gin-admin/internal/app/config"
+	igorm "github.com/wangwei518/gin-admin/internal/app/model/impl/gorm"
 	"github.com/jinzhu/gorm"
 )
 

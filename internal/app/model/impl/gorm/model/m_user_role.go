@@ -3,10 +3,10 @@ package model
 import (
 	"context"
 
-	"github.com/LyricTian/gin-admin/internal/app/model"
-	"github.com/LyricTian/gin-admin/internal/app/model/impl/gorm/entity"
-	"github.com/LyricTian/gin-admin/internal/app/schema"
-	"github.com/LyricTian/gin-admin/pkg/errors"
+	"github.com/wangwei518/gin-admin/internal/app/model"
+	"github.com/wangwei518/gin-admin/internal/app/model/impl/gorm/entity"
+	"github.com/wangwei518/gin-admin/internal/app/schema"
+	"github.com/wangwei518/gin-admin/pkg/errors"
 	"github.com/google/wire"
 	"github.com/jinzhu/gorm"
 )

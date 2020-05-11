@@ -1,12 +1,12 @@
 package middleware
 
 import (
-	"github.com/LyricTian/gin-admin/internal/app/config"
-	icontext "github.com/LyricTian/gin-admin/internal/app/context"
-	"github.com/LyricTian/gin-admin/internal/app/ginplus"
-	"github.com/LyricTian/gin-admin/pkg/auth"
-	"github.com/LyricTian/gin-admin/pkg/errors"
-	"github.com/LyricTian/gin-admin/pkg/logger"
+	"github.com/wangwei518/gin-admin/internal/app/config"
+	icontext "github.com/wangwei518/gin-admin/internal/app/context"
+	"github.com/wangwei518/gin-admin/internal/app/ginplus"
+	"github.com/wangwei518/gin-admin/pkg/auth"
+	"github.com/wangwei518/gin-admin/pkg/errors"
+	"github.com/wangwei518/gin-admin/pkg/logger"
 	"github.com/gin-gonic/gin"
 )
 

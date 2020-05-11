@@ -3,7 +3,7 @@ package bll
 import (
 	"context"
 
-	"github.com/LyricTian/gin-admin/internal/app/schema"
+	"github.com/wangwei518/gin-admin/internal/app/schema"
 )
 
 // IUser 用户管理业务逻辑接口

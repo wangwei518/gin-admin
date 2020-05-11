@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/LyricTian/gin-admin/internal/app/config"
-	icontext "github.com/LyricTian/gin-admin/internal/app/context"
-	"github.com/LyricTian/gin-admin/pkg/util"
+	"github.com/wangwei518/gin-admin/internal/app/config"
+	icontext "github.com/wangwei518/gin-admin/internal/app/context"
+	"github.com/wangwei518/gin-admin/pkg/util"
 	"github.com/jinzhu/gorm"
 )
 

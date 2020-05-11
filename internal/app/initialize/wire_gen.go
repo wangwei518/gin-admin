@@ -6,13 +6,13 @@
 package initialize
 
 import (
-	"github.com/LyricTian/gin-admin/internal/app/api"
-	"github.com/LyricTian/gin-admin/internal/app/api/mock"
-	"github.com/LyricTian/gin-admin/internal/app/bll/impl/bll"
-	"github.com/LyricTian/gin-admin/internal/app/initialize/data"
-	"github.com/LyricTian/gin-admin/internal/app/model/impl/gorm/model"
-	"github.com/LyricTian/gin-admin/internal/app/module/adapter"
-	"github.com/LyricTian/gin-admin/internal/app/router"
+	"github.com/wangwei518/gin-admin/internal/app/api"
+	"github.com/wangwei518/gin-admin/internal/app/api/mock"
+	"github.com/wangwei518/gin-admin/internal/app/bll/impl/bll"
+	"github.com/wangwei518/gin-admin/internal/app/initialize/data"
+	"github.com/wangwei518/gin-admin/internal/app/model/impl/gorm/model"
+	"github.com/wangwei518/gin-admin/internal/app/module/adapter"
+	"github.com/wangwei518/gin-admin/internal/app/router"
 )
 
 // Injectors from wire.go:

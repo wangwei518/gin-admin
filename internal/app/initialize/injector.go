@@ -1,8 +1,8 @@
 package initialize
 
 import (
-	"github.com/LyricTian/gin-admin/internal/app/initialize/data"
-	"github.com/LyricTian/gin-admin/pkg/auth"
+	"github.com/wangwei518/gin-admin/internal/app/initialize/data"
+	"github.com/wangwei518/gin-admin/pkg/auth"
 	"github.com/casbin/casbin/v2"
 	"github.com/gin-gonic/gin"
 	"github.com/google/wire"

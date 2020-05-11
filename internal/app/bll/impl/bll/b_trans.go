@@ -3,8 +3,8 @@ package bll
 import (
 	"context"
 
-	"github.com/LyricTian/gin-admin/internal/app/bll"
-	"github.com/LyricTian/gin-admin/internal/app/model"
+	"github.com/wangwei518/gin-admin/internal/app/bll"
+	"github.com/wangwei518/gin-admin/internal/app/model"
 	"github.com/google/wire"
 )
 

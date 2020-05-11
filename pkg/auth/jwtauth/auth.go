@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/LyricTian/gin-admin/pkg/auth"
+	"github.com/wangwei518/gin-admin/pkg/auth"
 	jwt "github.com/dgrijalva/jwt-go"
 )
 
