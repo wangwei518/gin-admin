@@ -12,7 +12,7 @@ import (
 	"github.com/wangwei518/gin-admin/internal/app/router"
 	"github.com/google/wire"
 
-	// mongoModel "github.com/LyricTian/gin-admin/internal/app/model/impl/mongo/model"
+	// mongoModel "github.com/wangwei518/gin-admin/internal/app/model/impl/mongo/model"
 	gormModel "github.com/wangwei518/gin-admin/internal/app/model/impl/gorm/model"
 )
 

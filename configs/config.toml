@@ -91,6 +91,16 @@ Password = "abc-123"
 # 显示的真实姓名
 RealName = "超级管理员"
 
+[LDAP]
+# ip and port
+Addr = "ldap://10.0.93.97:389"
+# userDN
+DN = "ou=ASIC,ou=Beijing,dc=spreadtrum,dc=com"
+# leave blank if no need
+BindUserName = ""
+# leave blank if no need
+BindPassword = ""
+
 # redis配置信息
 [Redis]
 # 地址
@@ -104,31 +114,17 @@ Enable = true
 # 签名方式(支持：HS512/HS384/HS512)
 SigningMethod = "HS512"
 # 签名key
-SigningKey = "gin-admin"
+SigningKey = "top_secrets"
 # 过期时间（单位秒）
 Expired = 7200
-# 存储(支持：file/redis)
-Store = "file"
+# 存储(支持：file/redis/elasticsearch)
+Store = "elasticsearch"
 # 文件路径
 FilePath = "data/jwt_auth.db"
 # redis数据库(如果存储方式是redis，则指定存储的数据库)
 RedisDB = 10
 # 存储到redis数据库中的键名前缀
 RedisPrefix = "auth_"
-
-[Captcha]
-# 存储方式(支持：memory/redis)
-Store = "memory"
-# 数字长度
-Length = 4
-# 图片宽度
-Width = 400
-# 图片高度
-Height = 160
-# redis数据库(如果存储方式是redis，则指定存储的数据库)
-RedisDB = 10
-# 存储到redis数据库中的键名前缀
-RedisPrefix = "captcha_"
 
 # 请求频率限制(如果redis可用则使用redis，否则使用内存存储)
 [RateLimiter]
@@ -218,3 +214,10 @@ Database = "gin-admin"
 Timeout = 30
 # 集合名前缀
 CollectionPrefix = "g_"
+
+[Elasticsearch]
+URL = "http://127.0.0.1:9200"
+User = "elastic"
+Password = "123456"
+IndexPrefix = "ga_"
+

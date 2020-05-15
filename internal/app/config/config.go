@@ -59,28 +59,29 @@ func PrintWithJSON() {
 
 // Config 配置参数
 type Config struct {
-	RunMode      string
-	WWW          string
-	Swagger      bool
-	PrintConfig  bool
-	HTTP         HTTP
-	Menu         Menu
-	Casbin       Casbin
-	Log          Log
-	LogGormHook  LogGormHook
-	LogMongoHook LogMongoHook
-	Root         Root
-	JWTAuth      JWTAuth
-	Monitor      Monitor
-	Captcha      Captcha
-	RateLimiter  RateLimiter
-	CORS         CORS
-	Redis        Redis
-	Gorm         Gorm
-	MySQL        MySQL
-	Postgres     Postgres
-	Sqlite3      Sqlite3
-	Mongo        Mongo
+	RunMode       string
+	WWW           string
+	Swagger       bool
+	PrintConfig   bool
+	HTTP          HTTP
+	Menu          Menu
+	Casbin        Casbin
+	Log           Log
+	LogGormHook   LogGormHook
+	LogMongoHook  LogMongoHook
+	Root          Root
+	LDAP          LDAP
+	JWTAuth       JWTAuth
+	Monitor       Monitor
+	RateLimiter   RateLimiter
+	CORS          CORS
+	Redis         Redis
+	Gorm          Gorm
+	MySQL         MySQL
+	Postgres      Postgres
+	Sqlite3       Sqlite3
+	Mongo         Mongo
+	Elasticsearch Elasticsearch
 }
 
 // IsDebugMode 是否是debug模式
@@ -149,6 +150,14 @@ type Root struct {
 	RealName string
 }
 
+// LDAP Server
+type LDAP struct {
+	Addr         string
+	DN           string
+	BindUserName string
+	BindPassword string
+}
+
 // JWTAuth 用户认证
 type JWTAuth struct {
 	Enable        bool
@@ -175,16 +184,6 @@ type Monitor struct {
 	Enable    bool
 	Addr      string
 	ConfigDir string
-}
-
-// Captcha 图形验证码配置参数
-type Captcha struct {
-	Store       string
-	Length      int
-	Width       int
-	Height      int
-	RedisDB     int
-	RedisPrefix string
 }
 
 // RateLimiter 请求频率限制配置参数
@@ -269,4 +268,12 @@ type Mongo struct {
 	Database         string
 	Timeout          int
 	CollectionPrefix string
+}
+
+// Elasticsearch configurations
+type Elasticsearch struct {
+	URL         string //http://localhost:9200
+	User        string
+	Password    string
+	IndexPrefix string
 }

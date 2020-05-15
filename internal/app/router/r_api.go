@@ -1,8 +1,8 @@
 package router
 
 import (
-	"github.com/wangwei518/gin-admin/internal/app/middleware"
 	"github.com/gin-gonic/gin"
+	"github.com/wangwei518/gin-admin/internal/app/middleware"
 )
 
 // RegisterAPI register api group router
@@ -25,8 +25,6 @@ func (a *Router) RegisterAPI(app *gin.Engine) {
 		{
 			gLogin := pub.Group("login")
 			{
-				gLogin.GET("captchaid", a.LoginAPI.GetCaptcha)
-				gLogin.GET("captcha", a.LoginAPI.ResCaptcha)
 				gLogin.POST("", a.LoginAPI.Login)
 				gLogin.POST("exit", a.LoginAPI.Logout)
 			}
@@ -90,16 +88,16 @@ func (a *Router) RegisterAPI(app *gin.Engine) {
 	{
 		v2.POST("login", a.LoginAPI.Login)
 		v2.POST("logout", a.LoginAPI.Logout)
-		v2.POST("refresh-token", a.LoginAPI.Logout)
-		v2.POST("destroy-token", a.LoginAPI.Logout)
-		v2.GET("apijson", a.LoginAPI.Logout)
-		v2.POST("apijson", a.LoginAPI.Logout)
-		v2.PUT("apijson", a.LoginAPI.Logout)
-		v2.PATCH("apijson", a.LoginAPI.Logout)
-		v2.DELETE("apijson", a.LoginAPI.Logout)
+		v2.POST("refresh-token", a.LoginAPI.Login)
+		v2.POST("destroy-token", a.LoginAPI.Login)
+		v2.GET("apijson", a.LoginAPI.Login)
+		v2.POST("apijson", a.LoginAPI.Login)
+		v2.PUT("apijson", a.LoginAPI.Login)
+		v2.PATCH("apijson", a.LoginAPI.Login)
+		v2.DELETE("apijson", a.LoginAPI.Login)
 		admin := v2.Group("/admin")
 		{
-			admin.POST("tbd", a.LoginAPI.Logout)
+			admin.POST("tbd", a.LoginAPI.Login)
 		}
 	}
 }

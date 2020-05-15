@@ -19,8 +19,8 @@ var doc = `{
         "description": "{{.Description}}",
         "title": "{{.Title}}",
         "contact": {
-            "name": "LyricTian",
-            "email": "tiannianshou@gmail.com"
+            "name": "wangwei518",
+            "email": "wangwei518@gmail.com"
         },
         "license": {},
         "version": "{{.Version}}"

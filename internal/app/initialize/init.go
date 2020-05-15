@@ -7,15 +7,14 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/LyricTian/captcha"
-	"github.com/LyricTian/captcha/store"
 	"github.com/wangwei518/gin-admin/internal/app/config"
 	"github.com/wangwei518/gin-admin/pkg/logger"
-	"github.com/go-redis/redis"
+	//"github.com/go-redis/redis"
 	"github.com/google/gops/agent"
 )
 
 // InitCaptcha 初始化图形验证码
+/*
 func InitCaptcha() {
 	cfg := config.C.Captcha
 	if cfg.Store == "redis" {
@@ -27,6 +26,7 @@ func InitCaptcha() {
 		}, captcha.Expiration, logger.StandardLogger(), cfg.RedisPrefix))
 	}
 }
+*/
 
 // InitMonitor 初始化服务监控
 func InitMonitor(ctx context.Context) {

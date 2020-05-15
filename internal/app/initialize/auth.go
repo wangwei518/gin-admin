@@ -1,18 +1,20 @@
 package initialize
 
 import (
+	jwt "github.com/dgrijalva/jwt-go"
 	"github.com/wangwei518/gin-admin/internal/app/config"
 	"github.com/wangwei518/gin-admin/pkg/auth"
 	"github.com/wangwei518/gin-admin/pkg/auth/jwtauth"
 	"github.com/wangwei518/gin-admin/pkg/auth/jwtauth/store/buntdb"
+	"github.com/wangwei518/gin-admin/pkg/auth/jwtauth/store/elasticsearch"
 	"github.com/wangwei518/gin-admin/pkg/auth/jwtauth/store/redis"
-	jwt "github.com/dgrijalva/jwt-go"
 )
 
 // InitAuth 初始化用户认证
 func InitAuth() (auth.Auther, func(), error) {
 	cfg := config.C.JWTAuth
 
+	// the content in JWT
 	var opts []jwtauth.Option
 	opts = append(opts, jwtauth.SetExpired(cfg.Expired))
 	opts = append(opts, jwtauth.SetSigningKey([]byte(cfg.SigningKey)))
@@ -44,6 +46,18 @@ func InitAuth() (auth.Auther, func(), error) {
 			DB:        cfg.RedisDB,
 			KeyPrefix: cfg.RedisPrefix,
 		})
+	case "elasticsearch":
+		ecfg := config.C.Elasticsearch
+		s, err := elasticsearch.NewStore(&elasticsearch.Config{
+			URL:      ecfg.URL,
+			User:     ecfg.User,
+			Password: ecfg.Password,
+			Index:    ecfg.IndexPrefix + "auth_blacklist",
+		})
+		if err != nil {
+			return nil, nil, err
+		}
+		store = s
 	default:
 		s, err := buntdb.NewStore(cfg.FilePath)
 		if err != nil {

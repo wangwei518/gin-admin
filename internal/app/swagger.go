@@ -14,5 +14,5 @@ package app
 // @description RBAC scaffolding based on GIN + GORM/MONGO + CASBIN + WIRE.
 // @schemes http https
 // @basePath /
-// @contact.name LyricTian
-// @contact.email tiannianshou@gmail.com
+// @contact.name wangwei518
+// @contact.email wangwei518@gmail.com

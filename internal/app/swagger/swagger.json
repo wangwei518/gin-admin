@@ -8,8 +8,8 @@
         "description": "RBAC scaffolding based on GIN + GORM/MONGO + CASBIN + WIRE.",
         "title": "gin-admin",
         "contact": {
-            "name": "LyricTian",
-            "email": "tiannianshou@gmail.com"
+            "name": "wangwei518",
+            "email": "wangwei518@gmail.com"
         },
         "license": {},
         "version": "6.0.0"

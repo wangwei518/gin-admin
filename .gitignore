@@ -22,3 +22,7 @@
 # IDE configs
 .idea
 .vscode
+
+#
+.vendor
+.configs

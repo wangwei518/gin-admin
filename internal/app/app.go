@@ -130,7 +130,7 @@ func Init(ctx context.Context, opts ...Option) (func(), error) {
 	// 初始化图形验证码服务, 配置来自 config.C.Captcha
 	// 验证码服务来自Redis, 配置来自 config.C.Redis
 	// 【内网应用环境，去除验证码功能】
-	initialize.InitCaptcha()
+	//initialize.InitCaptcha()
 
 	// 初始化依赖注入器
 	injector, injectorCleanFunc, err := initialize.BuildInjector()

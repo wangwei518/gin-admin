@@ -413,8 +413,8 @@ definitions:
     type: object
 info:
   contact:
-    email: tiannianshou@gmail.com
-    name: LyricTian
+    email: wangwei518@gmail.com
+    name: wangwei518
   description: RBAC scaffolding based on GIN + GORM/MONGO + CASBIN + WIRE.
   license: {}
   title: gin-admin

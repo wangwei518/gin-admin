@@ -3,7 +3,6 @@ module github.com/wangwei518/gin-admin
 go 1.14
 
 require (
-	github.com/LyricTian/captcha v1.1.0
 	github.com/LyricTian/queue v1.2.0
 	github.com/LyricTian/structs v1.1.1
 	github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751
@@ -13,6 +12,7 @@ require (
 	github.com/fatih/structs v1.1.0 // indirect
 	github.com/gin-contrib/cors v1.3.1
 	github.com/gin-gonic/gin v1.6.2
+	github.com/go-ldap/ldap/v3 v3.1.8
 	github.com/go-redis/redis v6.15.7+incompatible
 	github.com/go-redis/redis_rate v6.5.0+incompatible
 	github.com/google/gops v0.3.7
@@ -32,4 +32,5 @@ require (
 	golang.org/x/time v0.0.0-20191024005414-555d28b269f0
 	golang.org/x/tools v0.0.0-20191030062658-86caa796c7ab // indirect
 	gopkg.in/yaml.v2 v2.2.8
+    github.com/olivere/elastic/v7 v7.0.15
 )

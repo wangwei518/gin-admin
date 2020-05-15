@@ -32,7 +32,7 @@ func UserAuthMiddleware(a auth.Auther, skippers ...SkipperFunc) gin.HandlerFunc 
 			return
 		}
 
-		userID, err := a.ParseUserID(c.Request.Context(), ginplus.GetToken(c))
+		userID, _, err := a.ParseUserID(c.Request.Context(), ginplus.GetToken(c))
 		if err != nil {
 			if err == auth.ErrInvalidToken {
 				if config.C.IsDebugMode() {
