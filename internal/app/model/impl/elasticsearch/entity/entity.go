@@ -10,10 +10,24 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 )
+type IndexModel struct {
+	[]map[string]interface{}
+	mappings	`json:"mappings"`
+} 
+type setting struct {
+	name int,
+	"number_of_replicas":0
+}
+type mappings struct {
+	doc
+
+}
+type doc struct {
+	properties
+}
 
 // Model base model
 type Model struct {
-	RecordID  string     `json:"_id"`
 	CreatedAt time.Time  `json:"created_at"`
 	UpdatedAt time.Time  `json:"updated_at"`
 	DeletedAt *time.Time `json:"deleted_at,omitempty"`
@@ -25,7 +39,14 @@ func (Model) IndexName(name string) string {
 }
 
 // CreateIndexes 创建索引
-func (Model) CreateIndexes(ctx context.Context, cli *elastic.Client, m indexer, indexes []mongo.IndexModel) error {
+func (Model) CreateIndexes(ctx context.Context, cli *elastic.Client, m indexer, settings map[string]interface{}, properties []IndexModel) error {
+
+	mmp = make(map[string]interface{})
+
+	mmp["username"] = "Murphy"
+	mmp["age"] = 19
+	mmp["sex"] = "man"
+
 	models := []mongo.IndexModel{
 		{Keys: bson.M{"created_at": 1}},
 		{Keys: bson.M{"updated_at": 1}},
