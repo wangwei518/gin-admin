@@ -33,7 +33,6 @@ func NewStore(cfg *Config) (*Store, error) {
 		elastic.SetHealthcheck(false),
 		elastic.SetBasicAuth(cfg.User, cfg.Password),
 	)
-
 	if err != nil {
 		return nil, err
 	}
